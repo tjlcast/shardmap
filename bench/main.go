@@ -27,7 +27,7 @@ func main() {
 	seed := time.Now().UnixNano()
 	// println(seed)
 	rng := rand.New(rand.NewSource(seed))
-	N := 1_000_000
+	N := 1000000
 	K := 10
 
 	fmt.Printf("\n")
