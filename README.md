@@ -1,13 +1,13 @@
 # `shardmap`
 
-[![GoDoc](https://img.shields.io/badge/api-reference-blue.svg?style=flat-square)](https://godoc.org/github.com/tidwall/shardmap)
+[![GoDoc](https://img.shields.io/badge/api-reference-blue.svg?style=flat-square)](https://godoc.org/github.com/tjlcast/shardmap)
 
 A simple and efficient thread-safe sharded hashmap for Go.
 This is an alternative to the standard Go map and `sync.Map`, and is optimized
 for when your map needs to perform lots of concurrent reads and writes.
 
 Under the hood `shardmap` uses 
-[robinhood hashmap](https://github.com/tidwall/rhh) and 
+[robinhood hashmap](https://github.com/tjlcast/rhh) and 
 [xxhash](https://github.com/cespare/xxhash).
 
 # Getting Started
@@ -17,7 +17,7 @@ Under the hood `shardmap` uses
 To start using `shardmap`, install Go and run `go get`:
 
 ```sh
-$ go get -u github.com/tidwall/shardmap
+$ go get -u github.com/tjlcast/shardmap
 ```
 
 This will retrieve the library.
@@ -46,7 +46,7 @@ fmt.Printf("%v\n", val)
 ## Performance
 
 Benchmarking conncurrent SET, GET, RANGE, and DELETE operations for 
-    `sync.Map`, `map[string]interface{}`, `github.com/tidwall/shardmap`. 
+    `sync.Map`, `map[string]interface{}`, `github.com/tjlcast/shardmap`. 
 
 ```
 go version go1.13 darwin/amd64 (Macbook 2018)
@@ -68,7 +68,7 @@ get: 1,000,000 ops over 12 threads in 45ms, 22,439,321/sec, 44 ns/op
 rng:       100 ops over 12 threads in 260ms,       384/sec, 2598202 ns/op
 del: 1,000,000 ops over 12 threads in 187ms, 5,339,459/sec, 187 ns/op
 
--- github.com/tidwall/shardmap --
+-- github.com/tjlcast/shardmap --
 set: 1,000,000 ops over 12 threads in 78ms, 12,828,089/sec, 77 ns/op
 get: 1,000,000 ops over 12 threads in 22ms, 45,686,575/sec, 21 ns/op
 rng:       100 ops over 12 threads in 231ms,       432/sec, 2310163 ns/op
@@ -96,16 +96,13 @@ get: 1,000,000 ops over 48 threads in 40ms, 25,032,448/sec, 39 ns/op
 rng:       100 ops over 48 threads in 116ms,       865/sec, 1155953 ns/op
 del: 1,000,000 ops over 48 threads in 222ms, 4,499,962/sec, 222 ns/op
 
--- github.com/tidwall/shardmap --
+-- github.com/tjlcast/shardmap --
 set: 1,000,000 ops over 48 threads in 51ms, 19,592,641/sec, 51 ns/op
 get: 1,000,000 ops over 48 threads in 7ms, 150,933,098/sec, 6 ns/op
 rng:       100 ops over 48 threads in 114ms,       880/sec, 1135747 ns/op
 del: 1,000,000 ops over 48 threads in 12ms, 81,879,373/sec, 12 ns/op
 ```
 
-## Contact
-
-Josh Baker [@tidwall](http://twitter.com/tidwall)
 
 ## License
 
